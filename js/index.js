@@ -2,18 +2,18 @@ let ruc = document.getElementById("input_ruc").value
 let button = document.getElementById("button_ruc_buscar")
 button.addEventListener("click", buscarruc)
 
-try{
-    function buscarruc(ruc){
-        document.addEventListener("DOMContentLoaded", uploadData(ruc));
+function buscarruc(){
+    try{
+        document.addEventListener("DOMContentLoaded", uploadData(document.getElementById("input_ruc").value));
         document.addEventListener("DOMContentLoaded", uploadDataNotificaciones(ruc));
         document.addEventListener("DOMContentLoaded", uploadDataComunication(ruc));
+    }catch (e) {
+        console.log("error")
     }
-} catch (e) {
-    console.log("error")
 }
 
 try {   
-    function uploadData(ruc){
+    function uploadData(){
         
         const url = "http://localhost:40000/CassandraApi/api/listarcontratos/"+ruc
         console.log(url)
@@ -41,7 +41,7 @@ try {
     }
 
     
-    function uploadDataNotificaciones(ruc){
+    function uploadDataNotificaciones(){
         const url = "http://localhost:40000/CassandraApi/api/notificacioneslaborales/"+ruc
         fetch(url)
         .then(res => res.json())
@@ -66,7 +66,7 @@ try {
 
     }
 
-    function uploadDataComunication(ruc){
+    function uploadDataComunication(){
         const url = "http://localhost:40000/CassandraApi/api/listarcomunicados/"+ruc
         fetch(url)
         .then(res => res.json())
@@ -90,21 +90,20 @@ try {
         });
 
     }
-
-    //js para los botones
-    const buttoneliminarcomunicado = document.getElementById("buttoneliminarcomunicado")
-    buttoneliminarcomunicado.addEventListener("click", alertdata);
-
-    function alertdata(){
-        console.log("buttoneliminarcomunicado")
-    }
-
-    const buttoneliminarnotificaciones = document.getElementById("buttoneliminarnotificaciones")
-    buttoneliminarnotificaciones.addEventListener("click" , alertnotificaciones)
-
-    function alertnotificaciones(){
-        console.log("buttoneliminarnotificaciones")
-    }
 } catch (e) {
     console.log("error cargar documentos")
 }
+//js para los botones
+const buttoneliminarcomunicado = document.getElementById("buttoneliminarcomunicado")
+buttoneliminarcomunicado.addEventListener("click", alertdata);
+
+function alertdata(){
+    console.log("buttoneliminarcomunicado")
+}
+
+const buttoneliminarnotificaciones = document.getElementById("buttoneliminarnotificaciones")
+buttoneliminarnotificaciones.addEventListener("click" , alertnotificaciones)
+function alertnotificaciones(){
+    console.log("buttoneliminarnotificaciones")
+}
+
