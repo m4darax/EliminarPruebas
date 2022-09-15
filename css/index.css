@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+body{
+    background-image: radial-gradient(circle at -16.45% 25.82%, #b7d9e8 0, #91bfd5 25%, #66a3c0 50%, #3388ac 75%, #006f9a 100%);
+    font-family: 'Quicksand', sans-serif;
+    /*background: url("/img/fondo-eliminacion-contratos.jpg");*/
+    background-size: 100%;
+    background-attachment: fixed;
+    overflow-y: auto;
+}
+/*CONFIG GLOBAL*/
+input[type=submit]{
+    cursor: pointer;
+}
+
+/*COTENEDOR PARA EL INPUT DE RUC*/
+.container-cabecera-ruc{
+    height: 60px;
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+    
+}
+.cotainer-input-ruc{
+    height: 50px;
+    width: 340px;
+    margin: 5px;
+    text-align: center;
+}
+#input_ruc{
+    font-size: 20px;
+    margin-top: 5px;
+    height: 35px;
+    width: 320px;
+    border-radius: 10px;
+    background-color: #20c1d8;
+    color: white;
+    border: none;
+}
+
+#input_ruc:hover{
+    background: #00a5ff;
+}
+
+#input_ruc::placeholder{
+    color: white;
+}
+
+#button_ruc_buscar{
+    margin-left: 10px;
+    height: 40px;
+    width: 200px;
+    margin-top: 5px;
+    margin-left: 5px;
+    background-color: #03fcf3;
+    border: none;
+    border-radius: 10px;
+}
+
+#button_ruc_buscar:hover{
+    background: #00a2f5;
+    border: 1px solid #0efff9;
+}
+
+.div-button-buscar-ruc{
+    margin-left: auto;
+    margin-bottom: 5px;
+    margin-left: 1px;
+    width: 280px;
+    height: 50px;
+    
+}
+
+
+/*AQUI TERMINA CSS INPUT TEXT DE RUC*/
+
+.container{
+    width: 80%;
+    max-height: 602px;
+    margin: auto;
+}
+
+.container-data{
+    width: 80%;
+    max-height: 602px;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 15px;
+}
+
+.container-data-notificaciones{
+    width: 80%;
+    max-height: 602px;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 15px;
+}
+
+.container-data-comunicados{
+    width: 80%;
+    max-height: 602px;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 15px;
+}
+
+
+.tituloempresa {
+    grid-column: 1/9;
+    background: #00b8ff;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.tituloempresanotificaciones {
+    grid-column: 1/9;
+    background: #00b8ff;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.tituloempresacomunicados {
+    grid-column: 1/9;
+    background: #00b8ff;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.titulo-tipo-de-envio {
+    grid-column: 1/9;
+    background: #61c8ff;
+    font-size: 12px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.titulos {
+    background: #b8daff;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.grid-nombre-empresa{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /*calcula el ancho por 10 columnas*/
+    grid-template-rows: minmax(20px, auto); /*calcula el alto por 10 datgos*/
+    /*column-gap: 1px; /*para dar espacio entre columnas*/
+    /*row-gap: 1px; para dar espacio entre filas*/ 
+}
+
+.grid-nombre-empresa-notificaciones{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /*calcula el ancho por 10 columnas*/
+    grid-template-rows: minmax(20px, auto); /*calcula el alto por 10 datgos*/
+    /*column-gap: 1px; /*para dar espacio entre columnas*/
+    /*row-gap: 1px; para dar espacio entre filas*/ 
+}
+
+.grid-nombre-empresa-comunicados{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /*calcula el ancho por 10 columnas*/
+    grid-template-rows: minmax(20px, auto); /*calcula el alto por 10 datgos*/
+    /*column-gap: 1px; /*para dar espacio entre columnas*/
+    /*row-gap: 1px; para dar espacio entre filas*/ 
+}
+
+.grid-tipo-de-envio{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /*calcula el ancho por 10 columnas*/
+    grid-template-rows: minmax(5px, auto); /*calcula el alto por 10 datgos*/
+    margin: 2px 2px;
+}
+
+.grid-tipo-de-envio-notificaciones{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /*calcula el ancho por 10 columnas*/
+    grid-template-rows: minmax(5px, auto); /*calcula el alto por 10 datgos*/
+    margin: 2px 2px;
+}
+
+.grid-tipo-de-envio-comunicados{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /*calcula el ancho por 10 columnas*/
+    grid-template-rows: minmax(5px, auto); /*calcula el alto por 10 datgos*/
+    margin: 2px 2px;
+}
+
+.cabeceras-tipo-de-envio{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: minmax(50px, auto);
+    margin: 4px 4px;
+    column-gap: 1px;
+}
+
+.cabeceras-tipo-de-envio-notificaciones {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: minmax(50px, auto);
+    margin: 4px 4px;
+    column-gap: 1px;
+}
+
+.cabeceras-tipo-comunicados {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: minmax(50px, auto);
+    margin: 4px 4px;
+    column-gap: 1px;
+}
+
+.cabeceras-tipo-de-envio{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: minmax(50px, auto);
+    margin: 4px 4px;
+    column-gap: 1px;
+}
+
+.grid-data{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: minmax(50px, auto);
+    column-gap: 1px;
+}
+
+.grid-data-notificaciones{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: minmax(50px, auto);
+    column-gap: 1px;
+}
+
+.grid-data-comunicados{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: minmax(50px, auto);
+    column-gap: 1px;
+}
+
+.cabeceras-tipo-de-envio div {
+    text-align: center;
+}
+
+.grid-data:hover{
+    border: 1px solid black;
+}
+
+.grid-data-comunicados:hover {
+    border: 1px solid black;
+}
+
+.data{
+    background: #edefff;
+    font-size: 10px;
+    text-align: center;
+}
+.data input[type=checkbox]{
+    width:25px;
+    height:25px;
+    margin-top: 10px;
+}
+
+/*CSS BOTONES ELIMINAR*/
+.container-button {
+    height: 54px;
+    width: 50%;
+    margin: auto;
+}
+
+.container-button input[type=submit]{
+    display: grid;
+    color: white;
+    height: 50px;
+    width: 250px;
+    background: #00aaff;
+    font-size: 12px;
+    border: none;
+    border-radius: 10px;
+}
+
+.button-center-div{
+    margin: auto;
+    height: 50px;
+    width: 260px;
+}
+
+.container-button input[type=submit]:hover {
+    background: #009aff;
+    border: 2px solid #005b9f ;
+}
+/*TERMINA CSS BOTONES ELIMINAR*/
+

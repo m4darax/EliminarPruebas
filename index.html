@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eliminar Pruebas INDIGITAL</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="container-cabecera-ruc">
+      <div class="cotainer-input-ruc">
+        <input type="text" value="20607942944" name="ruc" id="input_ruc" placeholder="INGRESA NUMERO DE RUC">
+      </div>
+      <div class="div-button-buscar-ruc">
+        <input type="submit" value="Buscar Empresa" id="button_ruc_buscar" class="button_ruc_buscar" />
+      </div>
+    </div>
+    <div class="container">
+      <div class="grid-nombre-empresa">
+        <div class="tituloempresa">
+          <p>EMPRESA</p>
+          <input type="hidden" value="" name="empresa_id" id="empresa_id" />
+        </div>
+      </div>
+      <div class="grid-tipo-de-envio">
+        <div class="titulo-tipo-de-envio">
+          <p>CONTRATOS</p>
+        </div>
+      </div>
+      <div class="cabeceras-tipo-de-envio">
+        <div class="titulos"><p>Marcar</p></div>
+        <div class="titulos"><p>Nombre Documento Legal</p></div>
+        <div class="titulos"><p>Estado Proceso</p></div>
+        <div class="titulos"><p>Fecha Envio</p></div>
+        <div class="titulos"><p>Total Documentos</p></div>
+        <div class="titulos"><p>Usuario Login</p></div>
+        <div class="titulos"><p>Usuario Nombre</p></div>
+      </div>
+    </div>
+    <div class="container-data" id="listmodel">
+      <!--HERE DATA-->
+    </div>
+    <br />
+    <div class="container-button">
+      <div class="button-center-div">
+        <input type="submit" name="button-eliminar" id="buttoneliminarcontrato" value="ELIMINAR CONTRATOS">
+      </div>
+    </div>
+    <br />
+    <div class="container">
+      <div class="grid-nombre-empresa-notificaciones">
+        <div class="tituloempresa">
+          <p>EMPRESA</p>
+        </div>
+      </div>
+      <div class="grid-tipo-de-envio-notificaciones">
+        <div class="titulo-tipo-de-envio">
+          <p>Notificaciones Laborales</p>
+        </div>
+      </div>
+      <div class="cabeceras-tipo-de-envio-notificaciones">
+        <div class="titulos"><p>Marcar</p></div>
+        <div class="titulos"><p>Nombre Tipo Documento</p></div>
+        <div class="titulos"><p>Estado Proceso</p></div>
+        <div class="titulos"><p>Fecha Envio</p></div>
+        <div class="titulos"><p>Total Documentos</p></div>
+        <div class="titulos"><p>Usuario Login</p></div>
+        <div class="titulos"><p>Usuario Nombre</p></div>
+      </div>
+    </div>
+    <div class="container-data-notificaciones" id="listmodel-notificaciones">
+      <!--HERE DATA-->
+    </div>
+    <br />
+    <div class="container-button">
+      <div class="button-center-div">
+        <input type="submit" name="button-eliminar" id="buttoneliminarnotificaciones" value="ELIMINAR NOTIFICACIONES">
+      </div>
+    </div>
+    <br />
+    <div class="container">
+      <div class="grid-nombre-empresa-comunicados">
+        <div class="tituloempresa">
+          <p>EMPRESA</p>
+        </div>
+      </div>
+      <div class="grid-tipo-de-envio-comunicados">
+        <div class="titulo-tipo-de-envio">
+          <p>Comunicados</p>
+        </div>
+      </div>
+      <div class="cabeceras-tipo-comunicados">
+        <div class="titulos"><p>Marcar</p></div>
+        <div class="titulos"><p>Nombre Tipo Documento</p></div>
+        <div class="titulos"><p>Estado Proceso</p></div>
+        <div class="titulos"><p>Fecha Envio</p></div>
+        <div class="titulos"><p>Total Documentos</p></div>
+        <div class="titulos"><p>Usuario Login</p></div>
+        <div class="titulos"><p>Usuario Nombre</p></div>
+      </div>
+    </div>
+    <div class="container-data-comunicados" id="listmodel-comunicados">
+      <!--HERE DATA-->
+    </div>
+    <br/>
+    <div class="container-button">
+      <div class="button-center-div">
+        <input type="submit" name="comunicado" id="buttoneliminarcomunicado" value="ELIMINAR COMUNICADOS">
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
