@@ -274,6 +274,7 @@ input[type=submit]{
     height: 54px;
     width: 50%;
     margin: auto;
+    display: flex;
 }
 
 .container-button input[type=submit]{
@@ -293,6 +294,9 @@ input[type=submit]{
     width: 260px;
 }
 
+#buttoneliminarcomunicado:disabled,#buttoneliminarnotificaciones:disabled, #buttoneliminarcontrato:disabled{
+    background: red;
+}
 .container-button input[type=submit]:hover {
     background: #009aff;
     border: 2px solid #005b9f ;

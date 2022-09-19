@@ -1,12 +1,17 @@
-let ruc = document.getElementById("input_ruc").value
 let button = document.getElementById("button_ruc_buscar")
 button.addEventListener("click", buscarruc)
 
 function buscarruc(){
     try{
-        document.addEventListener("DOMContentLoaded", uploadData(document.getElementById("input_ruc").value));
-        document.addEventListener("DOMContentLoaded", uploadDataNotificaciones(ruc));
-        document.addEventListener("DOMContentLoaded", uploadDataComunication(ruc));
+        ruc = document.getElementById("input_ruc").value;
+        if (input_ruc.value.length != 0){
+            console.log("tiene datos")
+            document.addEventListener("DOMContentLoaded", uploadData(ruc));
+            document.addEventListener("DOMContentLoaded", uploadDataNotificaciones(ruc));
+            document.addEventListener("DOMContentLoaded", uploadDataComunication(ruc));
+        }{
+            console.log("CASILLA DE INPUT VACIO")
+        }
     }catch (e) {
         console.log("error")
     }
@@ -14,18 +19,25 @@ function buscarruc(){
 
 try {   
     function uploadData(){
+        while (listmodel.firstChild) {
+            listmodel.removeChild(listmodel.firstChild);
+        }
+        try {
+            const url = "http://localhost:40000/CassandraApi/api/listarcontratos/"+ruc
+            console.log(url)
+            fetch(url)
+            .then(res => res.json())
+            .then(data => showData(data))
+        } catch (error) {
+            console.log("ERROR CON API LISTAR CONTRATOS")
+        }
         
-        const url = "http://localhost:40000/CassandraApi/api/listarcontratos/"+ruc
-        console.log(url)
-        fetch(url)
-        .then(res => res.json())
-        .then(data => showData(data))
     }
 
     function showData(data){
-        const listmodel = document.getElementById('listmodel');
+        listmodel = document.getElementById('listmodel');
         data.forEach((element) => {
-            document.getElementById("empresa_id").value = `${element.empresaId}`
+            console.log("lo rellana nuevamente")
             const optionsdata = document.createElement("div");
             optionsdata.classList.add('grid-data')
             optionsdata.innerHTML = `
@@ -42,7 +54,12 @@ try {
 
     
     function uploadDataNotificaciones(){
+        const listmodel = document.getElementById('listmodel-notificaciones');
+        while (listmodel.firstChild) {
+            listmodel.removeChild(listmodel.firstChild);
+        }
         const url = "http://localhost:40000/CassandraApi/api/notificacioneslaborales/"+ruc
+        console.log(url)
         fetch(url)
         .then(res => res.json())
         .then(data => showDataNotificacionesLaborales(data))
@@ -68,6 +85,11 @@ try {
 
     function uploadDataComunication(){
         const url = "http://localhost:40000/CassandraApi/api/listarcomunicados/"+ruc
+        const listmodel = document.getElementById('listmodel-comunicados');
+        while (listmodel.firstChild) {
+            listmodel.removeChild(listmodel.firstChild);
+        }
+        console.log(url)
         fetch(url)
         .then(res => res.json())
         .then(data => showDataComunicados(data))
@@ -75,6 +97,9 @@ try {
 
     function showDataComunicados(data){
         const listmodel = document.getElementById('listmodel-comunicados');
+        while (listmodel.firstChild) {
+            listmodel.removeChild(listmodel.firstChild);
+        }
         data.forEach((element) => {
             const optionsdata = document.createElement("div");
             optionsdata.classList.add('grid-data-comunicados')
@@ -94,16 +119,41 @@ try {
     console.log("error cargar documentos")
 }
 //js para los botones
-const buttoneliminarcomunicado = document.getElementById("buttoneliminarcomunicado")
-buttoneliminarcomunicado.addEventListener("click", alertdata);
+/*BOTONES DE PARA ELIMINAR DATOS*/
+const buttoneliminarcontratos = document.getElementById("buttoneliminarcontrato")
+buttoneliminarcontratos.addEventListener("click", alertContrato);
+function alertContrato(){
+    console.log(buttoneliminarcontratos)
+}
 
-function alertdata(){
-    console.log("buttoneliminarcomunicado")
+const buttoneliminarcomunicado = document.getElementById("buttoneliminarcomunicado")
+buttoneliminarcomunicado.addEventListener("click", alertdatanotificaciones);
+
+function alertdatanotificaciones(){
+    
 }
 
 const buttoneliminarnotificaciones = document.getElementById("buttoneliminarnotificaciones")
 buttoneliminarnotificaciones.addEventListener("click" , alertnotificaciones)
 function alertnotificaciones(){
-    console.log("buttoneliminarnotificaciones")
+    
 }
 
+/*BOTONES DE ACTIVAR ELIMINAR*/
+let buttoneliminarcontrato = document.getElementById('buttonactivareliminarcontrato')
+buttoneliminarcontrato.addEventListener("click", activarbottoncontratos);
+function activarbottoncontratos(){
+    document.getElementById("buttoneliminarcontrato").removeAttribute("disabled")
+}
+
+let buttonactivareliminarnotificaciones = document.getElementById('buttonactivareliminarnotificaciones')
+buttonactivareliminarnotificaciones.addEventListener("click", activarbottonnotificaciones);
+function activarbottonnotificaciones(){
+    document.getElementById("buttoneliminarnotificaciones").removeAttribute("disabled")
+}
+
+let buttonactivareliminarcomunicados = document.getElementById('buttonactivareliminarcomunicados')
+buttonactivareliminarcomunicados.addEventListener("click", activarbottoncomunicados);
+function activarbottoncomunicados(){
+    document.getElementById("buttoneliminarcomunicado").removeAttribute("disabled")
+}

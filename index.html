@@ -10,7 +10,7 @@
   <body>
     <div class="container-cabecera-ruc">
       <div class="cotainer-input-ruc">
-        <input type="text" name="ruc" id="input_ruc" placeholder="INGRESA NUMERO DE RUC">
+        <input type="number" name="ruc" id="input_ruc" splaceholder="INGRESA NUMERO DE RUC">
       </div>
       <div class="div-button-buscar-ruc">
         <input type="submit" value="Buscar Empresa" id="button_ruc_buscar" class="button_ruc_buscar" />
@@ -20,7 +20,6 @@
       <div class="grid-nombre-empresa">
         <div class="tituloempresa">
           <p>EMPRESA</p>
-          <input type="hidden" value="" name="empresa_id" id="empresa_id" />
         </div>
       </div>
       <div class="grid-tipo-de-envio">
@@ -44,7 +43,10 @@
     <br />
     <div class="container-button">
       <div class="button-center-div">
-        <input type="submit" name="button-eliminar" id="buttoneliminarcontrato" value="ELIMINAR CONTRATOS">
+        <input type="submit" name="button-eliminar" id="buttoneliminarcontrato" value="ELIMINAR CONTRATOS" disabled>
+      </div>
+      <div class="button-center-div">
+        <input type="submit" id="buttonactivareliminarcontrato" value="ACTIVAR ELIMINAR CONTRATOS">
       </div>
     </div>
     <br />
@@ -75,7 +77,10 @@
     <br />
     <div class="container-button">
       <div class="button-center-div">
-        <input type="submit" name="button-eliminar" id="buttoneliminarnotificaciones" value="ELIMINAR NOTIFICACIONES">
+        <input type="submit" name="button-eliminar" id="buttoneliminarnotificaciones" value="ELIMINAR NOTIFICACIONES" disabled>
+      </div>
+      <div class="button-center-div">
+        <input type="submit" id="buttonactivareliminarnotificaciones" value="ACTIVAR ELIMINAR NOTIFICACIONES">
       </div>
     </div>
     <br />
@@ -106,7 +111,10 @@
     <br/>
     <div class="container-button">
       <div class="button-center-div">
-        <input type="submit" name="comunicado" id="buttoneliminarcomunicado" value="ELIMINAR COMUNICADOS">
+        <input type="submit" name="comunicado" id="buttoneliminarcomunicado" value="ELIMINAR COMUNICADOS" disabled>
+      </div>
+      <div class="button-center-div">
+        <input type="submit"  id="buttonactivareliminarcomunicados" value="ACTIVAR ELIMINAR COMUNICADOS">
       </div>
     </div>
     <script src="js/index.js"></script>
