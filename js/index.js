@@ -9,7 +9,7 @@ function buscarruc(){
             document.addEventListener("DOMContentLoaded", uploadData(ruc));
             document.addEventListener("DOMContentLoaded", uploadDataNotificaciones(ruc));
             document.addEventListener("DOMContentLoaded", uploadDataComunication(ruc));
-        }{
+        } else {
             console.log("CASILLA DE INPUT VACIO")
         }
     }catch (e) {
@@ -37,7 +37,6 @@ try {
     function showData(data){
         listmodel = document.getElementById('listmodel');
         data.forEach((element) => {
-            console.log("lo rellana nuevamente")
             const optionsdata = document.createElement("div");
             optionsdata.classList.add('grid-data')
             optionsdata.innerHTML = `
@@ -123,20 +122,32 @@ try {
 const buttoneliminarcontratos = document.getElementById("buttoneliminarcontrato")
 buttoneliminarcontratos.addEventListener("click", alertContrato);
 function alertContrato(){
-    console.log(buttoneliminarcontratos)
+    console.log("ELIMINAR CONTRATOS")
+    const url = "http://localhost:40000/CassandraApi/api/deleteallcontracts/"+ruc
+    fetch(url)
+        .then(res => res.json())
+        .then(data => console.log(data + " CONTRATOS ELIMINADOS"))
 }
 
 const buttoneliminarcomunicado = document.getElementById("buttoneliminarcomunicado")
 buttoneliminarcomunicado.addEventListener("click", alertdatanotificaciones);
 
 function alertdatanotificaciones(){
-    
+    console.log("ELIMINAR COMUNICADO")
+    const url = "http://localhost:40000/CassandraApi/api/deleteallreleases/"+ruc
+    fetch(url)
+        .then(res => res.json())
+        .then(data => console.log(data + " COMUNICADOS ELIMINADOS"))
 }
 
 const buttoneliminarnotificaciones = document.getElementById("buttoneliminarnotificaciones")
 buttoneliminarnotificaciones.addEventListener("click" , alertnotificaciones)
 function alertnotificaciones(){
-    
+    console.log("ELIMINAR NOTIFICACIONES")
+    const url = "http://localhost:40000/CassandraApi/api/deleteallnotification/"+ruc
+    fetch(url)
+        .then(res => res.json())
+        .then(data => console.log(data + " NOTIFICACIONES ELIMINADOS"))
 }
 
 /*BOTONES DE ACTIVAR ELIMINAR*/
